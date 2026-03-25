@@ -1,0 +1,49 @@
+{
+  "name": "aruba-central-mcp-server",
+  "version": "1.0.0",
+  "description": "MCP (Model Context Protocol) server for HPE Aruba Networking Central — Network management via AI agents.",
+  "main": "index.js",
+  "type": "module",
+  "directories": {
+    "doc": "docs",
+    "test": "tests"
+  },
+  "scripts": {
+    "build": "tsup src/traditional/index.ts src/code-mode/index.ts --format esm --dts --clean",
+    "build:traditional": "tsup src/traditional/index.ts --format esm --dts",
+    "build:code-mode": "tsup src/code-mode/index.ts --format esm --dts",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "start:traditional": "node dist/traditional/index.js",
+    "start:code-mode": "node dist/code-mode/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cheenu1092-oss/aruba-central-mcp-server.git"
+  },
+  "keywords": [
+    "mcp",
+    "aruba",
+    "central",
+    "network",
+    "management",
+    "ai",
+    "agent"
+  ],
+  "author": "Nagarjun Srinivasan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cheenu1092-oss/aruba-central-mcp-server/issues"
+  },
+  "homepage": "https://github.com/cheenu1092-oss/aruba-central-mcp-server#readme",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.27.1",
+    "zod": "^4.3.6"
+  },
+  "devDependencies": {
+    "@types/node": "^25.5.0",
+    "tsup": "^8.5.1",
+    "typescript": "^5.9.3",
+    "vitest": "^4.1.1"
+  }
+}
